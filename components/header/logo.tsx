@@ -1,27 +1,54 @@
 import React from "react";
 
-// Define the LogoProps interface with a required `logoText` prop of type string and an optional `username` prop of type string.
+interface Social {
+  name: string;
+  icon: string;
+  link: string;
+}
+
 interface LogoProps {
   logoText?: string;
   username?: string;
+  socials?: Social[];
 }
 
-// Define the Logo component as a React functional component that takes in a `LogoProps` object and returns a React element.
-const Logo: React.FC<LogoProps> = ({ logoText = 'Mi.Projects', username }) => {
-  // If a `username` prop is provided, append it to the default `logoText` value.
+const Logo: React.FC<LogoProps> = ({ logoText = 'Mi.Projects', username, socials = [] }) => {
+  username = "beta";
   const text = username ? `Mi.Projects - ${username}` : logoText;
 
-  // Return a button element with the class "logo" and the data-text attribute set to "Awesome".
+  socials = [
+    {
+      name: "Facebook",
+      icon: "fab fa-facebook-f",
+      link: "https://www.facebook.com/"
+    },
+    {
+      name: "Twitter",
+      icon: "fab fa-twitter",
+      link: "https://twitter.com/"
+    },
+    {
+      name: "Instagram",
+      icon: "fab fa-instagram",
+      link: "https://www.instagram.com/"
+    }
+  ];
+
   return (
-    <h1 className="logo" data-text="Awesome">
-      {/* Render two spans inside the button: */}
-      {/* One with the class "actual-text" and the text inside surrounded by non-breaking spaces */}
-      <span className="actual-text">&nbsp;{text}&nbsp;</span>
-      {/* And one with the class "hover-text" that is hidden to screen readers and also has the text inside surrounded by non-breaking spaces. */}
-      <span className="hover-text" aria-hidden="true">&nbsp;{text}&nbsp;</span>
-    </h1>
+    <div className="logo-container">
+      <h1 className="logo" data-text="Awesome">
+        <span className="actual-text">&nbsp;{text}&nbsp;</span>
+        <span className="hover-text" aria-hidden="true">&nbsp;{text}&nbsp;</span>
+      </h1>
+      <div className="social-icons">
+        {socials.map(social => (
+          <a href={social.link} key={social.name}>
+            <i className={social.icon}></i>
+          </a>
+        ))}
+      </div>
+    </div>
   );
 };
 
-// Export the Logo component as the default export of this module.
 export default Logo;

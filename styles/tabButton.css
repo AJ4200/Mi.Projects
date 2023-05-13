@@ -17,6 +17,7 @@
     background-color: var(--secondary-color);
     color: #fff;
     font-weight: bold;
+    outline-width: 3px;
     outline: invert;
     font-size: var(--medium-font-size);
     font-family: var(--sans-serif-font);
