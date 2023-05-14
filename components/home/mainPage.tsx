@@ -1,45 +1,36 @@
 import React from "react";
 import TabButton from "../buttons/tabbutton";
+import Sidebar from "../../components/Sidebar";
+import ProjectCard from "../../components/ProjectCard";
+
 
 function MainPage() {
+
   const tabButtons = [
     { label: "Web Development", id: "webdev" },
     { label: "Imagirey", id: "imagirey" },
     { label: "Music", id: "music" },
   ];
 
-  const projects = [
-    {
-      title: "Project Title",
-      description: "Description of project goes here.",
+  let projects = [];
+
+  for (let i = 0; i <= 11; i++) {
+    projects[i] = {
+      title: "Project Title" + i,
+      description: "Description of project goes here." + i,
       imageUrl: "https://source.unsplash.com/640x480/?landscape",
-      id: 1,
-    },
-    {
-      title: "Project Title",
-      description: "Description of project goes here.",
-      imageUrl: "https://source.unsplash.com/640x480/?landscape",
-      id: 2,
-    },
-    {
-      title: "Project Title",
-      description: "Description of project goes here.",
-      imageUrl: "https://source.unsplash.com/640x480/?landscape",
-      id: 3,
-    },
-  ];
+      id: i,
+    };
+  }
 
   return (
     <div className="container">
-      <aside className="sidebar">
-        <div className="profile-image">
-          <img src="https://via.placeholder.com/150" alt="Profile" />
-        </div>  
-        <h2 className="profile-heading">User Profile</h2>
-        <p className="profile-detail">Name: John Doe</p>
-        <p className="profile-detail">Email: johndoe@example.com</p>
-        <p className="profile-detail">Location: San Francisco, CA</p>
-      </aside>
+      <Sidebar
+        image="https://via.placeholder.com/150"
+        name="John Doe"
+        email="johndoe@example.com"
+        location="San Francisco, CA"
+      />
       <div className="main-content">
         <nav className="tab-bar">
           {tabButtons.map((button) => (
@@ -48,17 +39,7 @@ function MainPage() {
         </nav>
         <section className="tab-content">
           {projects.map((project) => (
-            <div key={project.id} className="project">
-              <h3 className="project-title">{project.title}</h3>
-              <div className="project-image">
-                <picture>
-                  <source type="image/webp" srcSet={`${project.imageUrl}.webp`} />
-                  <source type="image/jpeg" srcSet={`${project.imageUrl}.jpg`} />
-                  <img src={`${project.imageUrl}.jpg`} alt={project.title} />
-                </picture>
-              </div>
-              <p className="project-description">{project.description}</p>
-            </div>
+            <ProjectCard key={project.id} {...project} />
           ))}
         </section>
       </div>

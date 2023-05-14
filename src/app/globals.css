@@ -39,4 +39,12 @@ body {
   background: linear-gradient(to bottom, transparent, var(--background-end-color)) var(--background-start-color);
   background-repeat: no-repeat;
   background-attachment: fixed;
+      -webkit-overflow-Y: hidden;
+    -moz-overflow-Y: hidden;
+    -o-overflow-Y: hidden;
+    overflow-y: hidden;
+    -webkit-animation: fadeIn 1 1s ease-out;
+    -moz-animation: fadeIn 1 1s ease-out;
+    -o-animation: fadeIn 1 1s ease-out;
+    animation: fadeIn 1 1s ease-out;
 }
