@@ -1,7 +1,7 @@
 import React from "react";
-import TabButton from "../buttons/tabbutton";
+import TabButton from "../utils/buttons/tabbutton";
 import Sidebar from "../../components/Sidebar";
-import ProjectCard from "../../components/ProjectCard";
+import ProjectCard from "../../components/utils/ProjectCard";
 
 
 function MainPage() {
