@@ -4,6 +4,7 @@ import '../../styles/section.css'
 import '../../styles/tabButton.css'
 import '../../styles/customebg.css'
 import '../../styles/projectmodal.css'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Inter } from 'next/font/google'
 import Head from 'next/head';
 

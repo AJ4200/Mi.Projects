@@ -1,24 +1,16 @@
-import Logo from '../../components/header/logo'
-import MainPage from '../../components/home/mainPage'
-
+import React from 'react';
+import Logo from '../../components/header/logo';
+import MainPage from '../../components/home/mainPage';
+import BackgroundLights from '../../components/background/BackgroundLights';
 
 export default function Home() {
   return (
-    
     <main>
-        <div className='light x1'></div>
-  <div className='light x2'></div>
-  <div className='light x3'></div>
-  <div className='light x4'></div>
-  <div className='light x5'></div>
-  <div className='light x6'></div>
-  <div className='light x7'></div>
-  <div className='light x8'></div>
-  <div className='light x9'></div>
+      <BackgroundLights />
       <header>
-        <Logo/>
+        <Logo />
       </header>
-      <MainPage/>
+      <MainPage />
     </main>
-  )
+  );
 }

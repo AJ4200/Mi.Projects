@@ -1,5 +1,4 @@
 import React from "react";
-import ProjectModal from "./ProjectModal";
 import Image from "next/image";
 
 interface Props {
@@ -9,16 +8,15 @@ interface Props {
 }
 
 const ProjectCard: React.FC<Props> = ({ title, description, imageUrl }) => {
-
-
   return (
     <>
-      <div 
-      className="project">
+      <div className="project">
         <h3 className="project-title">{title}</h3>
-            <Image className="project-image" src={`${imageUrl}.jpg`} alt={title} />
+        <div className="project-image">
+          <Image src={`${imageUrl}.jpg`} alt={title} width={150} height={100} />
+        </div>
         <p className="project-description">{description}</p>
-      </div>         
+      </div>
     </>
   );
 };

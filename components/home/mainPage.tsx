@@ -3,48 +3,52 @@ import TabButton from "../utils/buttons/tabbutton";
 import Sidebar from "../../components/Sidebar";
 import ProjectCard from "../../components/utils/ProjectCard";
 
+const tabButtons = [
+  { label: "Web Development", id: "webdev" },
+  { label: "Imagirey", id: "imagirey" },
+  { label: "Music", id: "music" },
+];
 
-function MainPage() {
+const projects: { title: string; description: string; imageUrl: string; id: number; }[] = [];
 
-  const tabButtons = [
-    { label: "Web Development", id: "webdev" },
-    { label: "Imagirey", id: "imagirey" },
-    { label: "Music", id: "music" },
-  ];
+for (let i = 0; i < 5; i++) {
+  projects.push({
+    title: `Project Title ${i}`,
+    description: `Description of project goes here ${i}`,
+    imageUrl: `https://via.placeholder.com/300x200?text=Project+${i}`,
+    id: i,
+  });
+}
 
-  let projects = [];
+const MainPage = () => {
+  const renderTabButtons = () => {
+    return tabButtons.map((button) => (
+      <TabButton key={button.id} label={button.label} />
+    ));
+  };
 
-  for (let i = 0; i <= 11; i++) {
-    projects[i] = {
-      title: "Project Title" + i,
-      description: "Description of project goes here." + i,
-      imageUrl: "https://source.unsplash.com/640x480/?landscape",
-      id: i,
-    };
-  }
+  const renderProjects = () => {
+    return projects.map((project) => (
+      <div key={project.id}>
+        <ProjectCard {...project} />
+      </div>
+    ));
+  };
 
   return (
     <div className="container">
       <Sidebar
-        image="https://via.placeholder.com/150"
+        image="/profile.png"
         name="John Doe"
         email="johndoe@example.com"
         location="San Francisco, CA"
       />
       <div className="main-content">
-        <nav className="tab-bar">
-          {tabButtons.map((button) => (
-            <TabButton key={button.id} label={button.label} />
-          ))}
-        </nav>
-        <section className="tab-content">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} {...project} />
-          ))}
-        </section>
+        <nav className="tab-bar">{renderTabButtons()}</nav>
+        <section className="tab-content">{renderProjects()}</section>
       </div>
     </div>
   );
-}
+};
 
 export default MainPage;
