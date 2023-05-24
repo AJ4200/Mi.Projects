@@ -1,0 +1,49 @@
+/* === removing default logo style ===*/
+.logo {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  /* logo styling */
+  .logo {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --animation-color: var(--tertiary-color);
+    --fs-size: var(--large-font-size);
+    --brand-color: #FFFFFF;
+    --brand-font: var(--monospace-font);
+  
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: var(--brand-font);
+    position: relative;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    background-color: var(--brand-color);
+  }
+  
+  /* this is the text, when you hover on logo */
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--secondary-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--secondary-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--secondary-color);
+    background-color: var(--primary-color);
+  }
+  
+  /* hover */
+  .logo:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--secondary-color));
+  }
+  
