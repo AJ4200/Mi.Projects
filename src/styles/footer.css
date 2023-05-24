@@ -1,42 +1,40 @@
-/* === removing default footer style ===*/
+/* Remove default footer style */
 .footer {
-    margin: 0;
-    height: auto;
-    background: transparent;
-    padding: 0;
-    border: none;
-  }
-  
-  /* footer styling */
-  .footer {
-
-    letter-spacing: 3px;
-    text-decoration: none;
-    font-size: var(--fs-size);
-    font-family: var(--brand-font);
-    position: relative;
-    text-transform: uppercase;
-    color: var(--primary-color);
-    background-color: var(--brand-color);
-  }
-  
-  /* this is the text, when you hover on footer */
-  .hover-text {
-    position: absolute;
-    box-sizing: border-box;
-    content: attr(data-text);
-    color: var(--secondary-color);
-    width: 0%;
-    inset: 0;
-    border-right: var(--border-right) solid var(--secondary-color);
-    overflow: hidden;
-    transition: 0.5s;
-    -webkit-text-stroke: 1px var(--secondary-color);
-    background-color: var(--primary-color);
-  }
-  
-  /* hover */
-  .footer:hover .hover-text {
-    width: 100%;
-    filter: drop-shadow(0 0 23px var(--secondary-color));
-  }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background-color: var(--brand-color);
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--brand-font);
+  text-transform: uppercase;
+  font-size: var(--fs-size);
+  color: var(--primary-color);
+  letter-spacing: 3px;
+  text-decoration: none;
+  z-index: 999;
+}
+ /* This is the text that appears when you hover over the footer */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--secondary-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--secondary-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--secondary-color);
+  background-color: var(--primary-color);
+}
+ /* Hover */
+.footer:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--secondary-color));
+}

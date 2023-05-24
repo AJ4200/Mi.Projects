@@ -1,23 +1,9 @@
 import React from "react";
 
-
-interface Social {
-  name: string;
-  icon: string;
-  link: string;
-}
-
-interface LogoProps {
-  logoText?: string;
-  username?: string;
-  socials?: Social[];
-}
-
-const Logo: React.FC<LogoProps> = ({ logoText = 'Mi.Projects', username, socials = [] }) => {
+ const Logo = ({ logoText = 'Mi.Projects', username, socials = [] }) => {
   username = "beta";
   const text = username ? `Mi.Projects - ${username}` : logoText;
-
-  socials = [
+   socials = [
     {
       name: "Facebook",
       icon: "fab fa-facebook-f",
@@ -34,16 +20,15 @@ const Logo: React.FC<LogoProps> = ({ logoText = 'Mi.Projects', username, socials
       link: "https://www.instagram.com/"
     }
   ];
-
-  return (
+   return (
     <div className="logo-container">
       <h1 className="logo" data-text="Awesome">
         <span className="actual-text">&nbsp;{text}&nbsp;</span>
         <span className="hover-text" aria-hidden="true">&nbsp;{text}&nbsp;</span>
       </h1>
       <div className="social-icons">
-        {socials.map(social => (
-          <a href={social.link} key={social.name}>
+        {socials.map((social, index) => (
+          <a href={social.link} key={index}>
             <i className={social.icon}></i>
           </a>
         ))}
@@ -51,5 +36,4 @@ const Logo: React.FC<LogoProps> = ({ logoText = 'Mi.Projects', username, socials
     </div>
   );
 };
-
-export default Logo;
+ export default Logo;

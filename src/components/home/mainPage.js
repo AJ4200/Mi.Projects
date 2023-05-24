@@ -1,7 +1,7 @@
 import React from "react";
 import TabButton from "../utils/buttons/tabbutton";
-import Sidebar from "../../components/Sidebar";
-import ProjectCard from "../../components/utils/ProjectCard";
+import Sidebar from "../Sidebar";
+import ProjectCard from "../utils/ProjectCard";
 
 const tabButtons = [
   { label: "Web Development", id: "webdev" },
@@ -9,7 +9,7 @@ const tabButtons = [
   { label: "Music", id: "music" },
 ];
 
-const projects: { title: string; description: string; imageUrl: string; id: number; }[] = [];
+const projects = [];
 
 for (let i = 0; i < 5; i++) {
   projects.push({
@@ -23,9 +23,7 @@ for (let i = 0; i < 5; i++) {
 const MainPage = () => {
   const renderTabButtons = () => {
     return tabButtons.map((button) => (
-      <TabButton key={button.id} label={button.label} onClick={function (): void {
-        throw new Error("Function not implemented.");
-      } } />
+      <TabButton key={button.id} label={button.label}/>
     ));
   };
 

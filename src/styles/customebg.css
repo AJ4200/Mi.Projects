@@ -3,7 +3,7 @@ body {
     margin: 0;
     height: 100vh;
     font-weight: 100;
-  overflow-y: hidden; 
+     overflow-y: hidden; 
     -webkit-overflow-Y: hidden;
     -moz-overflow-Y: hidden;
     -o-overflow-Y: hidden;
