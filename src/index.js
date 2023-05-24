@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './styles/customebg.css';
+import './styles/footer.css';
+import './styles/logo.css';
+import './styles/projectmodal.css';
+import './styles/section.css';
+import './styles/tabButton.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
