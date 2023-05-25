@@ -3,6 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="footer">
+        
       <nav>
         <ul>
           <li><a href="/about">About Us</a></li>
@@ -10,7 +11,7 @@ const Footer = () => {
           <li><a href="/help">Help</a></li>
         </ul>
       </nav>
-      <div class="social-icons">
+      <div className="tinybutton">
         <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
         <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
         <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>

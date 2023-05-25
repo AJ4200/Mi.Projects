@@ -1,0 +1,32 @@
+.tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem 1rem;
+    background-color: var(--tooltip-bg);
+    color: var(--tooltip-text-color);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 999;
+  }
+  
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip.show {
+    opacity: 0.9;
+  }
+  
+  .tooltip.hide {
+    opacity: 0;
+  }
+  

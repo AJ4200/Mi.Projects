@@ -1,0 +1,173 @@
+.mp3-player {
+  background-color: #1d0113;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: -10px -10px 34px #10010b, 10px 10px 34px #260119;
+width: 100%;
+  transition: all 0.5s ease-in-out cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+  .mp3-player:hover {
+ border-top-right-radius: 0;
+ border-bottom-left-radius: 0;
+ transition: all 3s ease-in-out cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  
+  .player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .player-controls button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .player-controls button:hover {
+    color: #ff4f8f;
+  }
+  
+  .player-controls button.play-pause::before {
+    content: "\u25b6"; /* Play symbol */
+  }
+  
+  .player-controls button.play-pause.playing::before {
+    content: "\u23f8"; /* Pause symbol */
+    animation: pulse 1s infinite alternate;
+  }
+  
+  .player-controls button.previous-track::before {
+    content: "\u23ee"; /* Previous track symbol */
+  }
+  
+  .player-controls button.next-track::before {
+    content: "\u23ed"; /* Next track symbol */
+  }
+  
+  .player-controls button.volume-up::before {
+    content: "\u2191"; /* Volume up symbol */
+    animation: spin 1s infinite linear;
+  }
+  
+  .player-controls button.volume-down::before {
+    content: "\u2193"; /* Volume down symbol */
+    animation: spin 1s infinite linear;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+     50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Additional animations and effects can be added as needed */
+  /* Add an animation for the active track */
+.track-item.active {
+  animation: pulse-border 1s infinite alternate;
+}
+
+@keyframes pulse-border {
+  0% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #ff4f8f;
+  }
+}
+
+/* Add a hover effect for the track items */
+.track-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add a fade-in animation for the player */
+.mp3-player {
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add a glow effect for the play/pause button */
+.player-controls button.play-pause.playing::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff4f8f;
+  box-shadow: 0 0 10px #ff4f8f;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Add a fade-in animation for the player controls */
+.player-controls {
+  animation: fade-in-controls 1s ease-in-out;
+}
+
+@keyframes fade-in-controls {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Add a rotation animation for the next track button */
+.player-controls button.next-track::before {
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

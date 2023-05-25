@@ -26,7 +26,7 @@ import React from "react";
         <span className="actual-text">&nbsp;{text}&nbsp;</span>
         <span className="hover-text" aria-hidden="true">&nbsp;{text}&nbsp;</span>
       </h1>
-      <div className="social-icons">
+      <div className="tinybutton">
         {socials.map((social, index) => (
           <a href={social.link} key={index}>
             <i className={social.icon}></i>

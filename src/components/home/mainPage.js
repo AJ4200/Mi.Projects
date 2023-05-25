@@ -1,37 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import TabButton from "../utils/buttons/tabbutton";
 import Sidebar from "../utils/Sidebar";
-import ProjectCard from "../utils/cards/ProjectCard";
+import WebDevProjects from "../home/projects/WebDevProjects";
+import ImageryProjects from "../home/projects/ImageryProjects";
+import MusicProjects from "../home/projects/MusicProjects";
 
 const tabButtons = [
   { label: "Web Development", id: "webdev" },
-  { label: "Imagirey", id: "imagirey" },
+  { label: "Imagery", id: "imagery" },
   { label: "Music", id: "music" },
 ];
 
-const projects = [];
-
-for (let i = 0; i < 5; i++) {
-  projects.push({
-    title: `Project Title ${i}`,
-    description: `Description of project goes here ${i}`,
-    imageUrl: `https://via.placeholder.com/300x200?text=Project+${i}`,
-    id: i,
-  });
-}
-
 const MainPage = () => {
-  const renderTabButtons = () => {
-    return tabButtons.map((button) => (
-      <TabButton key={button.id} label={button.label}/>
-    ));
+  const [activeTab, setActiveTab] = useState(tabButtons[0].id);
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case "webdev":
+        return <WebDevProjects />;
+      case "imagery":
+        return <ImageryProjects />;
+      case "music":
+        return <MusicProjects />;
+      default:
+        return null;
+    }
   };
 
-  const renderProjects = () => {
-    return projects.map((project) => (
-      <div key={project.id}>
-        <ProjectCard {...project} />
-      </div>
+  const renderTabButtons = () => {
+    return tabButtons.map((button) => (
+      <TabButton
+        key={button.id}
+        label={button.label}
+        onClick={() => setActiveTab(button.id)}
+        isActive={activeTab === button.id}
+      />
     ));
   };
 
@@ -45,7 +48,7 @@ const MainPage = () => {
       />
       <div className="main-content">
         <nav className="tab-bar">{renderTabButtons()}</nav>
-        <section className="tab-content">{renderProjects()}</section>
+        <section className="tab-content">{renderTabContent()}</section>
       </div>
     </div>
   );

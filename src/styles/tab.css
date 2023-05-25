@@ -1,0 +1,100 @@
+.container {
+  position: fixed;
+  font-family: var(--sans-serif-font);
+  display: flex;
+}
+
+.sidebar {
+  flex: 0.95;
+  padding: 1.5rem;
+  background-color: #1b0112;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  box-shadow: 0 0 20px var(--secondary-color);
+  height: 40rem;
+  transition: all 0.5s ease-in-out;
+  justify-content: center;
+}
+
+.sidebar:hover {
+  transform: scale(1.15);
+  margin-top: 0;
+  transition: all 0.5s ease-in-out cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 1;
+}
+
+.profile-heading {
+  font-size: var(--large-font-size);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.profile-detail {
+  font-size: var(--medium-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.main-content {
+  padding: 1rem;
+  
+
+}
+
+.tab-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  gap: 5px;
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 2px;
+  border-top-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  width: fit-content;
+}
+
+.tab-content {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: flex-start;
+  padding: 0.5rem;
+  outline: 3px double var(--secondary-color);
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  width: 75%;
+  height: 69%;
+  overflow-x: auto;
+
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+/* Customize scrollbar */
+.tab-content::-webkit-scrollbar {
+  width: 6px;
+  border-bottom-right-radius: 1rem;
+}
+
+.tab-content::-webkit-scrollbar-track {
+  opacity: 0;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 20px var(--secondary-color);
+  border-bottom-right-radius: 1.5rem;
+  transition: all 1s ease-in-out;
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}

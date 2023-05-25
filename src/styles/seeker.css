@@ -1,0 +1,46 @@
+.seeker {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .seeker input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: var(--slider-bg);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .seeker input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--level-color);
+    border-radius: 50%;
+    border: none;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .seeker input[type="range"]:hover,
+  .seeker input[type="range"]:focus {
+    background: var(--slider-bg-hover);
+  }
+  
+  .time-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    color: var(--level-color);
+    font-size: 0.8rem;
+  }
+  
+  .current-time,
+  .total-time {
+    font-weight: bold;
+  }
+  
+  

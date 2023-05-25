@@ -1,19 +1,13 @@
-import { useState, React} from 'react'
+import React from "react";
 
-
-const TabButton = ({onClick,label}) => {
-
-  const [ActiveTab,setActiveTab] = useState(false);
+const TabButton = ({ label, onClick, isActive }) => {
+  const buttonClasses = isActive ? "tabbutton active" : "tabbutton";
 
   return (
- 
-    <button
-      className="tabbutton"
-       onClick={onClick}
-    >
+    <button className={buttonClasses} onClick={onClick}>
       <span>{label}</span>
     </button>
-  )
-}
+  );
+};
 
-export default TabButton
+export default TabButton;
