@@ -1,7 +1,7 @@
 import React from "react";
 import TabButton from "../utils/buttons/tabbutton";
-import Sidebar from "../Sidebar";
-import ProjectCard from "../utils/ProjectCard";
+import Sidebar from "../utils/Sidebar";
+import ProjectCard from "../utils/cards/ProjectCard";
 
 const tabButtons = [
   { label: "Web Development", id: "webdev" },

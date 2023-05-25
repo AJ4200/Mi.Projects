@@ -1,11 +1,6 @@
 import React from "react";
-interface Props {
-  title: string;
-  description: string;
-  imageUrl: string;
-}
 
-const ProjectCard: React.FC<Props> = ({ title, description, imageUrl }) => {
+const ProjectCard = ({ title, description, imageUrl }) => {
   return (
     <>
       <div className="project">

@@ -45,9 +45,7 @@
   margin-bottom: 1rem;
   gap: 5px;
   outline: 3px solid var(--secondary-color);
-  /* adjust margin-left to move tab-bar to the right */
   outline-offset: 2px;
-  /* add outline to tab-bar */
   border-top-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   width: fit-content;
@@ -55,11 +53,12 @@
 
 .tab-content {
   position: relative;
+
   display: flex;
   overflow-x: auto;
-  padding-bottom: 1rem;
+  padding: 0.5rem;
   outline: 3px double var(--secondary-color);
-  outline-offset: 5px;
+
   border-bottom-right-radius: 1rem;
   border-top-left-radius: 1rem;
 }
