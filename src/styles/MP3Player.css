@@ -5,11 +5,15 @@
   box-shadow: -10px -10px 34px #10010b, 10px 10px 34px #260119;
 width: 100%;
   transition: all 0.5s ease-in-out cubic-bezier(0.215, 0.61, 0.355, 1);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+
+  
+  backdrop-filter: blur(6px) saturate(200%);
+  -webkit-backdrop-filter: blur(6px) saturate(200%);
 }
 
   .mp3-player:hover {
- border-top-right-radius: 0;
- border-bottom-left-radius: 0;
  transition: all 3s ease-in-out cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   

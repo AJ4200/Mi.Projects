@@ -22,14 +22,15 @@
     font-size: var(--medium-font-size);
     font-family: var(--sans-serif-font);
     overflow: hidden;
-    transition: all 2s cubic-bezier(0.02, 0.01, 0.47, 1);
+    transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
   }
 .tabbutton.active {
-  animation: sh0 2s ease-in-out both;
-  margin: 6px;
+  animation: sh0 1s ease-in-out both;
+  margin: 3px;
   box-shadow: 0 0 20px var(--tertiary-color);
   outline: none;
   position: relative;
+  background-color: var(--primary-color);
 }
 
 .tabbutton.active::before,
@@ -44,8 +45,8 @@
   border-radius: 0.5rem;
   box-shadow: 0 0 20px var(--tertiary-color);
   opacity: 0;
-  transform: scale(0.5);
-  animation: glow 10s infinite;
+  transform: scale(1);
+  animation: glow 3s infinite;
 }
 
 @keyframes glow {
@@ -55,7 +56,7 @@
   }
   50% {
     opacity: 0.7;
-    transform: scale(1.1);
+    transform: scale(1.5);
   }
   100% {
     opacity: 0;
