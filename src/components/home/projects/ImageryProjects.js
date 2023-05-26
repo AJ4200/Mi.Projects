@@ -1,30 +1,69 @@
-import React from "react";
-import ProjectCard from "../../utils/cards/ProjectCard";
+import React, { useState } from "react";
+import Imagery from "../image/Imagery";
+import ImageModal from "../image/ImageModal";
+import { PhotoSwipeGallery } from "react-photoswipe";
+import "photoswipe/dist/photoswipe.css";
 
-const projects = [
+
+const images = [
   {
-    title: "Project Title 2",
-    description: "Description of project goes here 2",
-    imageUrl: "https://via.placeholder.com/300x200?text=Project+2",
-    id: 2,
+    id: 0,
+    label: 'Image 0',
+    imageUrl: 'https://via.placeholder.com/300x200?text=Image0',
   },
   {
-    title: "Project Title 3",
-    description: "Description of project goes here 3",
-    imageUrl: "https://via.placeholder.com/300x200?text=Project+3",
-    id: 3,
+    id: 1,
+    label: 'Image 1',
+    imageUrl: 'https://via.placeholder.com/300x200?text=Image1',
   },
-  // Add more imagery projects...
+  // Add more images as needed
 ];
 
 const ImageryProjects = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [initialIndex, setInitialIndex] = useState(0);
+
+  const openGallery = (index) => {
+    setIsOpen(true);
+    setInitialIndex(index);
+  };
+
+  const closeGallery = () => {
+    setIsOpen(false);
+  };
+
+  const openModal = (index) => {
+    setInitialIndex(index);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div>
-      {projects.map((project) => (
-        <div key={project.id}>
-          <ProjectCard {...project} />
-        </div>
-      ))}
+      <div className="imagery-gallery">
+        {isOpen && (
+          <PhotoSwipeGallery
+            items={images}
+            options={{
+              index: initialIndex,
+              bgOpacity: 0.8,
+              shareEl: false,
+            }}
+            onClose={closeGallery}
+          />
+        )}
+      </div>
+      <div className="imagery-images">
+        {images.map((image, index) => (
+          <div key={image.id} className="imagery-image" onClick={() => openModal(index)}>
+            <Imagery {...image} />
+          </div>
+        ))}
+      </div>
+      {isOpen && <ImageModal image={images[initialIndex]} onClose={closeModal} />}
     </div>
   );
 };

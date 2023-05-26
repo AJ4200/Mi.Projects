@@ -19,7 +19,7 @@ const ProjectModal = ({
   return (
     <dialog className="project-modal-container" open>
       {isLoading ? (
-        <div className="project-loader"></div>
+        <div className="modal-loader"></div>
       ) : (
         <>
           <div className="project-modal">

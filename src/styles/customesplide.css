@@ -1,0 +1,45 @@
+.imagery-gallery {
+    display: none;
+  }
+  
+  .imagery-image {
+    cursor: pointer;
+    height: auto; 
+    flex-shrink: 0;
+    flex-basis: calc(25% - 1rem);
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border: 4px;
+    color: var(--text-color);
+    transition: all 0.5s ease-in-out;
+    outline-style: groove;
+    outline-offset: 5px;
+    outline-width: 0px;
+    outline-color: #1b0112;
+    background: linear-gradient(315deg, #1d0113, #180110);
+    box-shadow: -10px -10px 34px #10010b, 10px 10px 34px #260119;
+  }
+  
+  .imagery-image:hover {
+    transform: scale(0.8);
+    z-index: 1;
+    box-shadow: 0 0 20px var(--secondary-color);
+    outline: none;
+  }
+  
+  .imagery-label {
+    font-size: var(--large-font-size);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+  
+  .imagery-description {
+    font-size: var(--medium-font-size);
+    margin-bottom: 0;
+    color: var(--text-color);
+  }
+  

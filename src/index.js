@@ -17,6 +17,9 @@ import './styles/MP3Player.css'
 import './styles/volumeslider.css'
 import './styles/seeker.css'
 import './styles/tooltip.css'
+import './styles/customesplide.css'
+import './styles/imagemodal.css'
+import './styles/imgloader.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

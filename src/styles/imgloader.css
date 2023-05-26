@@ -1,0 +1,29 @@
+.imgloader {
+  width: 250px;
+  height: 10px;
+  background: var(--secondary-color);
+
+  border-radius: 50px;
+}
+
+.inner_loader {
+  width: 60%;
+  height: 100%;
+  background: var(--tertiary-color);
+  border-radius: 50px;
+  animation: moveLeftRight 4s ease-in-out infinite;
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(calc(-100% + 10px));
+  }
+
+  50% {
+    transform: translateX(calc(200px - 10px));
+  }
+
+  100% {
+    transform: translateX(calc(-100% + 10px));
+  }
+}
